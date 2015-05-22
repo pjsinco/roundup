@@ -5,11 +5,11 @@
 {!! Form::open(['url' => 'roundup']) !!}
 
     <div class="form-group">
-        {!! Form::label('date') !!}
+        {!! Form::label('Date for roundup') !!}
         {!! Form::text('date', null) !!}
     </div>
     <div class="form-group">
-        {!! Form::submit('Set date') !!}
+        {!! Form::submit('Create roundup') !!}
     </div>
 
 {!! Form::close() !!}
