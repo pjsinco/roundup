@@ -13,7 +13,13 @@
 
 Route::get('/', 'WelcomeController@index');
 
-Route::get('home', 'HomeController@index');
+//Route::get('home', 'HomeController@index');
+
+Route::get('/roundup/create', 'RoundupController@create');
+
+Route::get('/test', 'RoundupController@test');
+Route::post('/roundup', 'RoundupController@store');
+Route::get('/item', 'ItemController@index');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
