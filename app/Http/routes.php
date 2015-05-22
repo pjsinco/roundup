@@ -16,9 +16,10 @@ Route::get('/', 'WelcomeController@index');
 //Route::get('home', 'HomeController@index');
 
 Route::get('/roundup/create', 'RoundupController@create');
+Route::post('/roundup', 'RoundupController@store');
+Route::get('/roundup/{id}', 'RoundupController@show');
 
 Route::get('/test', 'RoundupController@test');
-Route::post('/roundup', 'RoundupController@store');
 Route::get('/item', 'ItemController@index');
 
 Route::controllers([

@@ -32,4 +32,10 @@ class RoundupController extends Controller {
         return redirect('item');
     }
 
+    public function show($id)
+    {
+        $roundup = Roundup::find($id);
+        echo '<pre>'; var_dump( $roundup ); echo '</pre>'; die(  );
+    }
+
 }
