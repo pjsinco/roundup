@@ -8,6 +8,7 @@ Make new:
         'article-major' => 'Major article',
         'article-minor' => 'Minor article',
         'ad' => 'Ad',
+        'quote' => 'Quote',
     )) !!}
 
     {!! Form::submit('Create') !!}
