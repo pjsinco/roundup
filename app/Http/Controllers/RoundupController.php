@@ -35,7 +35,11 @@ class RoundupController extends Controller {
     public function show($id)
     {
         $roundup = Roundup::find($id);
-        echo '<pre>'; var_dump( $roundup ); echo '</pre>'; die(  );
+        //dd($roundup);
+        return view('roundup.show');
+            //->with($roundup);
     }
+
+    
 
 }
