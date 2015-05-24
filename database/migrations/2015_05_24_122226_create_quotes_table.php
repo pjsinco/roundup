@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRoundupTable extends Migration {
+class CreateQuotesTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,11 +12,11 @@ class CreateRoundupTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('roundups', function(Blueprint $table)
+		Schema::create('quotes', function(Blueprint $table)
 		{
 			$table->increments('id');
-            $table->string('date');
 			$table->timestamps();
+            $table->string('quote')
 		});
 	}
 
@@ -27,7 +27,7 @@ class CreateRoundupTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('roundups');
+		Schema::drop('quotes');
 	}
 
 }
