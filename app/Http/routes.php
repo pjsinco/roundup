@@ -11,21 +11,30 @@
 |
 */
 
-Route::get('/', 'WelcomeController@index');
+Route::get('/', 'EmailController@create');
 
 //Route::get('home', 'HomeController@index');
 
-Route::get('/roundup/create', 'RoundupController@create');
-Route::post('/roundup', 'RoundupController@store');
-Route::get('/roundup/{id}', 'RoundupController@show');
+Route::post('/email', 'EmailController@store');
+Route::get('/email/create', 'EmailController@create');
+Route::get('/email/{id}', 'EmailController@show');
 
-Route::get('/test', 'RoundupController@test');
+Route::post('/menu', 'MenuController@processMenuSelection');
 
-Route::get('/item', 'ItemController@index');
-Route::get('/item/create/{roundupId}', 'ItemController@create');
-Route::post('/item', 'ItemController@store');
+Route::get('/email/{id}/quote/create', 'QuoteController@create');
+Route::post('/quote', 'QuoteController@store');
+
+
+Route::get('/article', 'ArticleController@index');
+Route::get('/article/create/{emailId}', 'ArticleController@create');
+Route::post('/article', 'ArticleController@store');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+
+
+
+
+Route::get('/test', 'EmailController@test');

@@ -16,7 +16,15 @@ class CreateQuotesTable extends Migration {
 		{
 			$table->increments('id');
 			$table->timestamps();
-            $table->string('quote')
+            $table->string('quote', 512);
+            $table->string('speaker');
+            $table->string('context')->nullable();
+            $table->integer('email_id')->unsigned()->nullable();
+
+            $table->foreign('email_id')
+                ->references('id')
+                ->on('emails')
+                ->onDelete('cascade');
 		});
 	}
 

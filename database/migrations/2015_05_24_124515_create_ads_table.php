@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEmailsTable extends Migration {
+class CreateAdsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,17 +12,18 @@ class CreateEmailsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('emails', function(Blueprint $table)
+		Schema::create('ads', function(Blueprint $table)
 		{
 			$table->increments('id');
 			$table->timestamps();
-			$table->string('date');
-			$table->integer('quote_id')->unsigned()->nullable();
+            $table->string('ad_link', 512);
+            $table->string('img_src', 512);
+            $table->string('title', 512);
+            $table->integer('email_id')->unsigned();
 
-            $table->foreign('quote_id')
+            $table->foreign('email_id')
                 ->references('id')
-                ->on('quotes')
-                ->onDelete('cascade');
+                ->on('emails');
 		});
 	}
 
@@ -33,7 +34,7 @@ class CreateEmailsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('emails');
+		Schema::drop('ads');
 	}
 
 }

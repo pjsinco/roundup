@@ -8,6 +8,9 @@ class Email extends Model {
         'date',
     ];
 
-	//
+	public function quote()
+    {
+        $this->hasOne('Quote');
+    }
 
 }

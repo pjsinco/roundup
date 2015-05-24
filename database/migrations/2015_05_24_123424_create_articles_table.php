@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateItemsTable extends Migration {
+class CreateArticlesTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,23 +12,22 @@ class CreateItemsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('items', function(Blueprint $table)
+		Schema::create('articles', function(Blueprint $table)
 		{
 			$table->increments('id');
 			$table->timestamps();
             $table->integer('wp_id')->unsigned();
-            $table->enum('types', ['feature', 'article-major', 
-                'article-minor', 'quote', 'ad']);
+            $table->enum('types', ['feature', 'major', 'minor']);
+            $table->boolean('bottom_rule');
             $table->string('kicker', 140);
-            $table->string('title', 256);
+            $table->string('title');
             $table->string('excerpt', 512);
-            $table->integer('roundup_id')->unsigned();
-            $table->string('link');
+            $table->integer('email_id')->unsigned();
+            $table->string('link', 512);
 
-            $table->foreign('roundup_id')
+            $table->foreign('email_id')
                 ->references('id')
-                ->on('roundups')
-                ->onDelete('cascade');
+                ->on('emails');
 		});
 	}
 
@@ -39,7 +38,7 @@ class CreateItemsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('items');
+		Schema::drop('articles');
 	}
 
 }
