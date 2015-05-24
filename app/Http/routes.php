@@ -20,7 +20,10 @@ Route::post('/roundup', 'RoundupController@store');
 Route::get('/roundup/{id}', 'RoundupController@show');
 
 Route::get('/test', 'RoundupController@test');
+
 Route::get('/item', 'ItemController@index');
+Route::get('/item/create/{roundupId}', 'ItemController@create');
+Route::post('/item', 'ItemController@store');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

@@ -12,11 +12,6 @@ class CreateRoundupsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('roundups', function(Blueprint $table)
-		{
-			$table->increments('id');
-			$table->timestamps();
-		});
 	}
 
 	/**

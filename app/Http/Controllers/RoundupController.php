@@ -27,9 +27,8 @@ class RoundupController extends Controller {
     {
         $input = $request->all();
 
-        Roundup::create($input);
-
-        return redirect('item');
+        $roundup = Roundup::create($input);
+        return redirect('item/create/' . $roundup['id']);
     }
 
     public function show($id)

@@ -1,12 +1,12 @@
 @extends ('app')
 
 @section ('top-matter')
-<h1>Roundup for {{ $date }}</h1>
+<h3>Roundup: {{ $date }}<h3>
+<h1>Create new item<h2>
 @stop
 
 @section ('content')
-Make new:
-{!! Form::open() !!}
+{!! Form::open(['url' => 'item']) !!}
     {!! Form::select('select-item', array(
         'feature' => 'Feature',
         'article-major' => 'Major article',
@@ -18,6 +18,4 @@ Make new:
     {!! Form::submit('Create') !!}
 
 {!! Form::close() !!}
-
-
 @stop
