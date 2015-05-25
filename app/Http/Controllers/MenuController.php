@@ -16,7 +16,7 @@ class MenuController extends Controller {
     public function processMenuSelection(Requests\CreateMenuRequest $request)
     {
         $input = $request->all();
-        $email = Email::find($input['email-id']);
+        //$email = Email::find($input['email-id']);
         switch ( $request['select-item'] ) {
             case 'quote':
                 return redirect('email/' . $input['email-id'] . '/quote/create')
@@ -29,7 +29,6 @@ class MenuController extends Controller {
                 
                 break;
         }
-        dd($request->all());
     }
 
 }

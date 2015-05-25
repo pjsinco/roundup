@@ -16,7 +16,6 @@ class EmailController extends Controller {
 
     function store(Requests\CreateEmailRequest $request)
     {
-
         $input = $request->all();
 
         $email = Email::create($input);
@@ -26,7 +25,7 @@ class EmailController extends Controller {
     function show($id)
     {
         $email = Email::find($id);
-        $quote = Quote::find($email->id);
+        $quote = Quote::where('email_id', $email->id)->first();
         return view('email.show')
             ->with('email', $email)
             ->with('quote', $quote)
