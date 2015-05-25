@@ -18,16 +18,18 @@ Route::get('/', 'EmailController@create');
 Route::post('/email', 'EmailController@store');
 Route::get('/email/create', 'EmailController@create');
 Route::get('/email/{id}', 'EmailController@show');
+Route::get('/email/{id}/edit', 'EmailController@edit');
 
 Route::post('/menu', 'MenuController@processMenuSelection');
 
 Route::get('/email/{id}/quote/create', 'QuoteController@create');
+Route::get('/email/{id}/article/create', 'ArticleController@create');
+
 Route::post('/quote', 'QuoteController@store');
-
-
-Route::get('/article', 'ArticleController@index');
-Route::get('/article/create/{emailId}', 'ArticleController@create');
 Route::post('/article', 'ArticleController@store');
+
+
+//Route::get('/article', 'ArticleController@index');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

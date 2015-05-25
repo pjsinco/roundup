@@ -155,7 +155,7 @@
                             <table class="fullwidth" style="border-collapse: collapse;" width="480" cellspacing="0" cellpadding="0" align="center" bgcolor="#ffffff">
                                 <tbody>
                                     <tr>
-                                        <td style="font-family: Arial; font-size: 10pt; color: #686d75;" align="center" bgcolor="#ffffff">@yield('feature')</td>
+                                        <td style="font-family: Arial; font-size: 10pt; color: #686d75;" align="center" bgcolor="#ffffff">@yield('articles')</td>
                                     </tr>
                                     <tr>
                                         <td bgcolor="#ffffff">&#160;</td>

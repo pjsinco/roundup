@@ -2,6 +2,7 @@
 
 use App\Email;
 use App\Quote;
+use App\Article;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -26,9 +27,11 @@ class EmailController extends Controller {
     {
         $email = Email::find($id);
         $quote = Quote::where('email_id', $email->id)->first();
+        $articles = Article::where('email_id', $email->id)->get();
         return view('email.show')
             ->with('email', $email)
             ->with('quote', $quote)
+            ->with('articles', $articles)
             ->nest('menu', 'menu.index', ['emailId' => $email['id']]);
     }
 

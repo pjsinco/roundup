@@ -17,13 +17,15 @@ class CreateArticlesTable extends Migration {
 			$table->increments('id');
 			$table->timestamps();
             $table->integer('wp_id')->unsigned();
-            $table->enum('types', ['feature', 'major', 'minor']);
+            $table->enum('type', ['feature', 'major', 'minor']);
             $table->boolean('bottom_rule');
             $table->string('kicker', 140);
             $table->string('title');
             $table->string('excerpt', 512);
-            $table->integer('email_id')->unsigned();
+            $table->integer('email_id')->unsigned()->nullable();
             $table->string('link', 512);
+            $table->string('img_src', 512);
+            $table->string('img_alt');
 
             $table->foreign('email_id')
                 ->references('id')

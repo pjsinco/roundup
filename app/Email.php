@@ -10,7 +10,12 @@ class Email extends Model {
 
 	public function quote()
     {
-        $this->hasOne('Quote');
+        return $this->hasOne('App\Quote');
+    }
+
+    public function articles()
+    {
+        return $this->hasMany('App\Article');
     }
 
 }

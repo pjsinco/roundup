@@ -16,7 +16,6 @@ class MenuController extends Controller {
     public function processMenuSelection(Requests\CreateMenuRequest $request)
     {
         $input = $request->all();
-        //$email = Email::find($input['email-id']);
         switch ( $request['select-item'] ) {
             case 'quote':
                 return redirect('email/' . $input['email-id'] . '/quote/create')
@@ -24,7 +23,10 @@ class MenuController extends Controller {
                 //return view('quote.create')
                     //->with('emailId', $input['email-id']);
                 break;
-            
+            case 'feature':
+                return redirect('email/' . $input['email-id'] . '/article/create')
+                    ->withInput(['emailId', $input['email-id']]);
+                break;
             default:
                 
                 break;

@@ -12,7 +12,7 @@ class Quote extends Model {
 
     public function email()
     {
-        $this->hasOne('Email');
+        return $this->belongsTo('App\Email');
     }
 
 }
