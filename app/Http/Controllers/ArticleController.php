@@ -22,6 +22,9 @@ class ArticleController extends Controller {
         $input = $request->all();
         $email = Email::find($input['email_id']);
 
+        // checkbox is not included in $request if it's not checked,
+        // so we set a false value if it isn't there
+        $input['bottom_rule'] = ($request->has('bottom_rule') ? '1' : '0');
         $article = Article::create($input);
 
         if ($input['type'] == 'feature' && empty($email->articles->toArray())) {

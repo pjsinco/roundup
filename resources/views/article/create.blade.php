@@ -18,7 +18,7 @@
 
 <div class="form-group">
     {!! Form::label('Include bottom rule') !!}
-    {!! Form::checkbox('bottom_rule', 1, true, ['checked']) !!}
+    {!! Form::checkbox('bottom_rule', 1, true) !!}
 </div>
     
 <div class="form-group">

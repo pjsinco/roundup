@@ -19,6 +19,7 @@ class CreateQuotesTable extends Migration {
             $table->string('quote', 512);
             $table->string('speaker');
             $table->string('context')->nullable();
+            $table->string('link');
             $table->integer('email_id')->unsigned()->nullable();
 
             $table->foreign('email_id')

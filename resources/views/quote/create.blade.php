@@ -18,6 +18,11 @@
     {!! Form::label('Context') !!}
     {!! Form::text('context') !!}
 </div>
+
+<div class="form-group">
+    {!! Form::label('Link') !!}
+    {!! Form::text('link') !!}
+</div>
 <div class="form-group">
     {!! Form::submit('Create quote') !!}
 </div>

@@ -24,7 +24,7 @@ class CreateQuoteRequest extends Request {
 		return [
 			'quote' => 'required',
 			'speaker' => 'required',
-			//'context' => 'optional',
+            'link' => 'required',
 		];
 	}
 

@@ -1,9 +1,6 @@
 <!DOCTYPE html>
-<html
-    xmlns="http://www.w3.org/1999/xhtml">
+<html>
     <head>
-        <META NAME="title" CONTENT="AOA - The DO" />
-        <META NAME="description" CONTENT="Most recent posts: May 23, 2015" />
         <META HTTP-EQUIV="Expires" CONTENT="Mon, 01 Jan 1990 12:00:00 GMT" />
         <META HTTP-EQUIV="Pragma" CONTENT="no-cache" />
         <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache" />
@@ -36,7 +33,8 @@
     </head>
     <body bgcolor="#efefef" link="#077cc2" vlink="#077cc2" alink="#077cc2">
         <center>
-            <table style="border-collapse: collapse;" width="100%" cellspacing="0" cellpadding="0" align="center">
+
+            <table id="top" style="border-collapse: collapse;" width="100%" cellspacing="0" cellpadding="0" align="center">
                 <tbody>
                     <tr>
                         <td align="center" bgcolor="#ef3f23">
@@ -44,7 +42,7 @@
                                 <tbody>
                                     <tr>
                                         <td style="font-family: Arial; font-size: 8pt; color: #ffffff; padding: 10px;" align="center" bgcolor="#ef3f23">
-                                            <a href="http://aoa-do.informz.net/Admin31/templates/Template_Html_Adv.asp?mfqid=16385734&test=t" style="color: #ffffff; text-decoration: none;" target="_blank"> VIEW IN A BROWSER 
+                                            <a href="#" onclick="alert('This link has been disabled for the online version.');return false;" style="color: #ffffff; text-decoration: none;" target="_blank"> VIEW IN A BROWSER 
                                                 <!--TRACKCUSTLINKZ-->
                                             </a>
                                         </td>
@@ -81,7 +79,6 @@
                                                                     </tr>
                                                                 </tbody>
                                                             </table>
-
                                                         </td>
                                                     </tr>
                                                 </tbody>
@@ -124,9 +121,10 @@
                                                                 <tbody>
                                                                     <tr>
                                                                         <td class="centermepadtop10" style="font-family: Arial; font-size: 10pt; color: #ef3f23;" align="left">
-                                                                            @yield ('date')
+                                                                            <table border=0 cellspacing=0 cellpadding=0 width='100%'>
+                                                                                @yield('date')
+                                                                            </table>
                                                                         </td>
-                                                                        
                                                                     </tr>
                                                                 </tbody>
                                                             </table>
@@ -148,63 +146,25 @@
                     </tr>
                 </tbody>
             </table>
-            <table style="border-collapse: collapse;" width="100%" cellspacing="0" cellpadding="0" align="center">
+
+
+            <table id="body" style="border-collapse: collapse;" width="100%" cellspacing="0" cellpadding="0" align="center">
                 <tbody>
-                    <tr>
-                        <td align="center" bgcolor="#efefef">
-                            <table class="fullwidth" style="border-collapse: collapse;" width="480" cellspacing="0" cellpadding="0" align="center" bgcolor="#ffffff">
-                                <tbody>
-                                    <tr>
-                                        <td style="font-family: Arial; font-size: 10pt; color: #686d75;" align="center" bgcolor="#ffffff">@yield('articles')</td>
-                                    </tr>
-                                    <tr>
-                                        <td bgcolor="#ffffff">&#160;</td>
-                                    </tr>
-                                    <tr>
-                                        <td style="font-family: Arial; font-size: 8pt; color: #686d75; padding-bottom: 10px;" align="center">ADVERTISEMENT</td>
-                                    </tr>
-                                    <tr>
-                                        <td style="font-family: Arial; font-size: 10pt; color: #686d75;" align="center" bgcolor="#ffffff"></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <table style="border-collapse: collapse;" width="100%" cellspacing="0" cellpadding="0" align="center">
-                <tbody>
-                    <tr>
-                        <td align="center" bgcolor="#efefef">
-                            <table class="fullwidth" style="border-collapse: collapse;" width="480" cellspacing="0" cellpadding="0" align="center" bgcolor="#ffffff">
-                                <tbody>
-                                    <tr>
-                                        <td style="font-family: Arial; font-size: 10pt; color: #686d75;" align="center" bgcolor="#ffffff"></td>
-                                    </tr>
-                                    <tr>
-                                        <td bgcolor="#ffffff">&#160;</td>
-                                    </tr>
-                                    <tr>
-                                        <td style="font-family: Arial; font-size: 8pt; color: #686d75; padding-bottom: 10px;" align="center">ADVERTISEMENT</td>
-                                    </tr>
-                                    <tr>
-                                        <td style="font-family: Arial; font-size: 10pt; color: #686d75;" align="center" bgcolor="#ffffff"></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <table style="border-collapse: collapse;" width="100%" cellspacing="0" cellpadding="0" align="center">
-                <tbody>
+
+
                     <tr>
                         <td align="center" bgcolor="#efefef">
                             <table class="fullwidth" style="border-collapse: collapse;" width="480" cellspacing="0" cellpadding="0" align="center" bgcolor="#ffffff">
                                 <tbody>
                                     <tr>
                                         <td style="font-family: Arial; font-size: 10pt; color: #686d75;" align="center" bgcolor="#ffffff">
-                                            @yield('quote')
+                                            <table border=0 cellspacing=0 cellpadding=0 width='100%'>
+
+                                                @yield('body')
+                                
+                                                @yield('quote')
+
+                                            </table>
                                         </td>
                                     </tr>
                                     <tr>
@@ -214,9 +174,14 @@
                             </table>
                         </td>
                     </tr>
+
+
+
                 </tbody>
-            </table>
-            <table style="border-collapse: collapse;" width="100%" cellspacing="0" cellpadding="0" align="center">
+            </table> <!-- #body -->
+
+
+            <table id="bottom" style="border-collapse: collapse;" width="100%" cellspacing="0" cellpadding="0" align="center">
                 <tbody>
                     <tr>
                         <td align="center" bgcolor="#ef3f23">
@@ -228,7 +193,7 @@
                                     <tr>
                                         <td style="font-family: Arial; font-size: 13pt; color: #757676;" align="center" bgcolor="#efefef">Have questions or need assistance?
                                             <br />
-                                            <a href="http://www.osteopathic.org/contact-us" style="color: #757676;" target="_blank">osteopathic.org/contact-us
+                                            Email <a href="mailto:thedo.osteopathic.org" style="color: #757676;" target="_blank">thedo.osteopathic.org
                                                 <!--TRACKCUSTLINKZ-->
                                             </a>
                                         </td>
@@ -284,7 +249,7 @@
                                     </tr>
                                     <tr>
                                         <td style="font-family: Arial; font-size: 10pt; color: #ffffff; line-height: 18px;" align="center" bgcolor="#ef3f23">
-                                            <a href="http://aoa-do.informz.net/aoa-do/default.asp?action=u&mi=%%MINSTANCEID%%&email=%%EMAIL%%&fid=2230" style="color: #ffffff; text-decoration: none;" target="_blank"> Unsubscribe 
+                                            <a href="" onclick="alert('This link has been disabled for the online version.');return false;" style="color: #ffffff; text-decoration: none;" target="_blank"> Unsubscribe 
                                                 <!--TRACKCUSTLINKZ-->
                                             </a>
                                         </td>
@@ -298,21 +263,12 @@
                     </tr>
                 </tbody>
             </table>
+
         </center>
         <br />
-        <center>
-            <table border=0>
-                <tr>
-                    <td VALIGN="CENTER" ALIGN="CENTER">
-                        <a href="http://pod3.informz.net/clk/red8.asp?u=%%UID%%&mi=%%MINSTANCEID%%&l=1">
-                            <img src="http://pod3.informz.net/Admin31/images/2011-poweredby-informz.gif" width="200" height="38" alt="Informz for iMIS" border="0">
-                         </a>
-                    </td>
-                </tr>
-            </table>
-        </center>
-        <!-- %%EMAILADDRESSTRACKING%% -->
+        <!--%%EMAILADDRESSTRACKING%%-->
         <!--COUNTOPENMAILADV-->
         @yield('sidebar')
     </body>
 </html>
+
