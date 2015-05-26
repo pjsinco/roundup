@@ -13,4 +13,7 @@ Create The DO's roundup email.
     ```
 
 
-
+###Tue May 26 09:43:58 2015 CDT
+* Github: [Faker](https://github.com/fzaninotto/Faker)
+        * Blog post: [Using Faker To Populate Your Laravel Projects During Development](http://www.edzynda.com/using-faker-to-populate-your-laravel-projects-during-development/)
+        * Blog post: [Seeding a Laravel 4 database](http://culttt.com/2013/12/16/seeding-laravel-4-database/)
