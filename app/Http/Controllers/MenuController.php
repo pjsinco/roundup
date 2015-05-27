@@ -23,7 +23,7 @@ class MenuController extends Controller {
                 //return view('quote.create')
                     //->with('emailId', $input['email-id']);
                 break;
-            case 'feature':
+            case 'article':
                 return redirect('email/' . $input['email-id'] . '/article/create')
                     ->withInput(['emailId', $input['email-id']]);
                 break;

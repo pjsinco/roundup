@@ -9,11 +9,11 @@ class Article extends Model {
         'link', 'img_alt', 'img_src'
     ];
     
-    public function setBottomRuleAttribute($value)
-    {
-        // is this working?
-        $this->attributes['bottom_rule'] = ($value == null ? 0 : 1);
-    }
+    //public function setBottomRuleAttribute($value)
+    //{
+         //is this working?
+        //$this->attributes['bottom_rule'] = ($value == null ? 0 : 1);
+    //}
 
     public function email()
     {

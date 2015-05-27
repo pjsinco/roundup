@@ -21,13 +21,16 @@ class ArticleController extends Controller {
     {
         $input = $request->all();
         $email = Email::find($input['email_id']);
-
         // checkbox is not included in $request if it's not checked,
         // so we set a false value if it isn't there
         $input['bottom_rule'] = ($request->has('bottom_rule') ? '1' : '0');
         $article = Article::create($input);
 
+        // make sure we store only 1 feature
         if ($input['type'] == 'feature' && empty($email->articles->toArray())) {
+            $email->articles()->save($article);
+            $article->email()->associate($email);
+        } elseif ($input['type'] != 'feature') {
             $email->articles()->save($article);
             $article->email()->associate($email);
         }
@@ -45,8 +48,10 @@ class ArticleController extends Controller {
     
     public function update($id, Requests\CreateArticleRequest $request)
     {
+        $input = $request->all();
+        $input['bottom_rule'] = ($request->has('bottom_rule') ? '1' : '0');
         $article = Article::findOrFail($id);
-        $article->update($request->all());
+        $article->update($input);
         return redirect()->action('EmailController@show', $article->email->id);
     }
 }

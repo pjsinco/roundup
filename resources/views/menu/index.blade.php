@@ -4,9 +4,7 @@
     {!! Form::open(['url' => 'menu']) !!}
         {!! Form::hidden('email-id', $emailId)  !!}
         {!! Form::select('select-item', array(
-            'feature' => 'Feature',
-            'article-major' => 'Major article',
-            'article-minor' => 'Minor article',
+            'article' => 'Article',
             'ad' => 'Ad',
             'quote' => 'Quote',
         )) !!}
