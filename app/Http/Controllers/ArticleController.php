@@ -13,7 +13,7 @@ class ArticleController extends Controller {
 	{
         $emailId = $request->segment(2);
 
-	    return view('article.create')
+	    return view('articles.create')
             ->with('emailId', $emailId);
 	}
 
@@ -33,9 +33,20 @@ class ArticleController extends Controller {
         }
 
         return redirect()->action('EmailController@show', [$input['email_id']]);
+    }
 
-
-
-        
+    public function edit($articleId)
+    {
+        $article = Article::findOrFail($articleId);
+        return view('articles.edit')
+            ->with('article', $article)
+            ->with('emailId', $article->email->id);
+    }
+    
+    public function update($id, Requests\CreateArticleRequest $request)
+    {
+        $article = Article::findOrFail($id);
+        $article->update($request->all());
+        return redirect()->action('EmailController@show', $article->email->id);
     }
 }

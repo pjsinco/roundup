@@ -100,7 +100,7 @@
 @section('body')
 
     @foreach ($articles as $article)
-        @include('article.show_' . $article['type'], ['article' => $article])
+        @include('articles.show_' . $article['type'], ['article' => $article])
     @endforeach
 
 @stop

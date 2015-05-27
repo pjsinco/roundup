@@ -1,8 +1,3 @@
-@extends('app')
-
-@section('content')
-<h3>Create an article</h3>
-{!! Form::open(['url' => 'article'])!!}
 <div class="form-group">
     {!! Form::hidden('email_id', $emailId)  !!}
     {!! Form::label('Article type') !!}
@@ -55,18 +50,6 @@
 </div>
 
 <div class="form-group">
-    {!! Form::submit('Create article') !!}
+    {!! Form::submit($submitButtonText) !!}
 </div>
-{!! Form::close() !!}
-@stop
-
-@section ('footer')
-    @if ($errors->any())
-        <ul class="alert alert-danger">
-            @foreach ($errors->all() as $error)
-            <li>{{ $error }}</li>
-            @endforeach
-    @endif
-@stop
-
 

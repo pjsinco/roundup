@@ -35,4 +35,18 @@ class EmailController extends Controller {
             ->nest('menu', 'menu.index', ['emailId' => $email['id']]);
     }
 
+    function edit($id)
+    {
+        $email = Email::findOrFail($id);
+        return view('email.edit')
+            ->with('email', $email);
+    }
+
+    function update($id, Requests\CreateEmailRequest $request)
+    {
+        $email = Email::findOrFail($id);
+        $email->update($request->all());
+        return redirect()->action('EmailController@show', $id);
+    }
+
 }
