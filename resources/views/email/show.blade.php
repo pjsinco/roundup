@@ -100,6 +100,7 @@
 @section('body')
 
     @foreach ($articles as $article)
+        {{ $article->type }}
         @include('articles.show_' . $article['type'], ['article' => $article])
     @endforeach
 
