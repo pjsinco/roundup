@@ -23,14 +23,24 @@ class EmailController extends Controller {
         return redirect()->action('EmailController@show', [$email['id']]);
     }
 
+    function index() 
+    {
+        $user = \Auth::user();
+dd($user);
+        $emails = Email::all();        
+        return view('email.index')->with('emails', $emails);
+    }
+
     function show($id)
     {
         $email = Email::find($id);
         $quote = Quote::where('email_id', $email->id)->first();
-        $articles = Article::where('email_id', $email->id)->get();
+        $feature = Article::where('email_id', $email->id)->feature()->first();
+        $articles = Article::where('email_id', $email->id)->notFeature()->get();
         return view('email.show')
             ->with('email', $email)
             ->with('quote', $quote)
+            ->with('feature', $feature)
             ->with('articles', $articles)
             ->nest('menu', 'menu.index', ['emailId' => $email['id']]);
     }
@@ -38,8 +48,11 @@ class EmailController extends Controller {
     function edit($id)
     {
         $email = Email::findOrFail($id);
+
+        $articles = $email->articles;
         return view('email.edit')
-            ->with('email', $email);
+            ->with('email', $email)
+            ->with('articles', $articles);
     }
 
     function update($id, Requests\CreateEmailRequest $request)

@@ -99,6 +99,8 @@
 
 @section('body')
 
+    @include('articles.show_feature', ['feature' => $feature])
+
     @foreach ($articles as $article)
         @include('articles.show_' . $article['type'], ['article' => $article])
     @endforeach

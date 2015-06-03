@@ -15,6 +15,17 @@ class Article extends Model {
         //$this->attributes['bottom_rule'] = ($value == null ? 0 : 1);
     //}
 
+    // http://laravel.com/docs/5.0/eloquent#query-scopes
+    public function scopeFeature($query) 
+    {
+        return $query->where('type', '=', 'feature');
+    }
+
+    public function scopeNotFeature($query)
+    {
+        return $query->where('type', '!=', 'feature');
+    }
+    
     public function email()
     {
         return $this->belongsTo('App\Email');

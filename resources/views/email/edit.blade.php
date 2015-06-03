@@ -14,6 +14,12 @@
 
 {!! Form::close() !!}
 
+@foreach ($articles as $article)
+    <h3>{{ $article->title }}</h3>
+    <span><a href="/article/{{ $article->id }}/edit">Edit</a></span>
+    <span><a href="/article/{{ $article->id }}/destroy">Delete</a> <small>(delete not working)</small></span>
+@endforeach
+
 @stop
 
 @section ('footer')

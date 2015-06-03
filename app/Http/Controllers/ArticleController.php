@@ -9,6 +9,11 @@ use Illuminate\Http\Request;
 
 class ArticleController extends Controller {
 
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
 	public function create(Request $request)
 	{
         $emailId = $request->segment(2);
@@ -62,5 +67,10 @@ class ArticleController extends Controller {
         $article = Article::findOrFail($id);
         $article->update($input);
         return redirect()->action('EmailController@show', $article->email->id);
+    }
+    
+    public function destroy($id)
+    {
+        return;
     }
 }

@@ -10,8 +10,8 @@
                                 <tbody>
                                     <tr>
                                         <td>
-                                            <a href="{{ $article['link'] }}" target="_blank">
-                                                <img alt="Image" border="0" alt="{{ $article['img_alt'] }}" class="fullwidth" src="{{ $article['img_src'] }}" style="display: block;" width="480" />
+                                            <a href="{{ $feature['link'] }}" target="_blank">
+                                                <img alt="Image" border="0" alt="{{ $feature['img_alt'] }}" class="fullwidth" src="{{ $feature['img_src'] }}" style="display: block;" width="480" />
                                             </a>
                                         </td>
                                     </tr>
@@ -34,15 +34,15 @@
                                             <table class="fullwidth" style="border-collapse: collapse;" width="400" cellspacing="0" cellpadding="0" align="center">
                                                 <tbody>
                                                     <tr>
-                                                        <td style="font-family: helvetica; font-size: 14px; color: #58595b; line-height: 18px; padding-bottom: 10px; font-weight: normal; text-transform: uppercase; letter-spacing: 1px;" align="center">{{ $article['kicker'] }}</td>
+                                                        <td style="font-family: helvetica; font-size: 14px; color: #58595b; line-height: 18px; padding-bottom: 10px; font-weight: normal; text-transform: uppercase; letter-spacing: 1px;" align="center">{{ $feature['kicker'] }}</td>
                                                     </tr>
                                                     <tr>
                                                         <td style="font-family: helvetica; font-size: 16pt; color: #ef3f23; line-height: 18px; padding-bottom: 10px;" align="center">
-                                                            <a href="{{ $article['link'] }}" style="color: #ef3f23; text-decoration: none; font-family: helvetica; font-size: 28px; line-height: 34px; font-weight: 200;" target="_blank">{{ $article['title'] }}</a>
+                                                            <a href="{{ $feature['link'] }}" style="color: #ef3f23; text-decoration: none; font-family: helvetica; font-size: 28px; line-height: 34px; font-weight: 200;" target="_blank">{{ $feature['title'] }}</a>
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <td style="font-family: helvetica; font-size: 15px; color: #686d75; line-height: 22px; font-weight: normal;" align="center">{{ $article['excerpt'] }}</td>
+                                                        <td style="font-family: helvetica; font-size: 15px; color: #686d75; line-height: 22px; font-weight: normal;" align="center">{{ $feature['excerpt'] }}</td>
                                                     </tr>
                                                     <tr>
                                                         <td>&nbsp;</td>
@@ -60,7 +60,7 @@
                     </tr>
                     <tr>
                         <td align="center">
-                            <a href="{{ $article['link'] }}" target="_blank">
+                            <a href="{{ $feature['link'] }}" target="_blank">
                                 <img alt="Read More" border="0" src="http://aoa-do.informz.net/aoa-do/data/images/TheDOResponsive/ReadMore.jpg" style="display: block;" width="214">
                             </a>
                         </td>
@@ -72,7 +72,7 @@
 </tr>
 <!--end_news()-->
 
-@if ($article['bottom_rule'])
+@if ($feature['bottom_rule'])
 <!--begin_news()-->
 <tr>
     <td width='100%'>
